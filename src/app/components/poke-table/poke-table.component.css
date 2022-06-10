@@ -1,0 +1,22 @@
+.contenedor{
+    width: 100%;
+    margin-top: 20px;
+    margin: auto;
+}
+
+.nombre{
+    min-width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+.th{
+    text-align: center;
+    background-color: #591c92 ;
+    color: #fff;
+}
+
+.mat-cell:hover{
+    cursor:pointer;
+    box-shadow: inset 0 0 0 5px #591c92;
+}

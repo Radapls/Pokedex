@@ -1,0 +1,124 @@
+
+ol, ul{
+    text-align: left;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+main{
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-around;  
+    margin-top: 20px;
+}
+
+p{
+    align-items: center;
+    font-style: normal;
+    color: #FFF;
+    background-color: #591c92;
+    padding: 5px;
+    margin: 0;
+    text-align-last: center ;
+}
+
+input{
+    border-radius: 4px ;
+}
+
+/*----------------Contenedor principal-------------*/
+
+.Container{
+    position: relative;
+    height: fit-content;
+    font-family: 'Roboto Mono', monospace;
+    max-width: 800px;
+    border-radius: 4px;
+    color: #000;
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
+    background-color: #FFF;
+    border: 1px solid black;
+}
+
+    .Container::before{
+            content: '';
+            background: radial-gradient(#591c92 33%, transparent 66%);
+            background-size: 3px 3px;
+            border-radius: 4px;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            z-index: -1;
+    }
+
+.poke-list{
+        width: 400px;
+        position: relative;
+        font-family: 'Roboto Mono', monospace;
+        max-width: 300px;
+        border-radius: 4px;
+        color: #000;
+        text-align: center;
+        padding: 10px;
+        margin: 0;
+        background-color: #FFF;
+        border: 1px solid black;
+    }
+
+.search{
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+            input[name="pokemon"] {
+                width: 250px;
+                border-style: solid;   
+                border-width: 3px;
+                border-color: #591c92;
+            }
+
+            
+.poke-card {
+    width: 400px;
+    position: relative;
+    height: fit-content;
+    font-family: 'Roboto Mono', monospace;
+    max-width: 300px;
+    border-radius: 4px;
+    text-align: center;
+    padding: 10px;
+    background-color: #FFF;
+    border: 1px solid black;
+}
+
+.img-container {
+    position: relative;
+    width: 180px;
+    margin: 10px auto;
+}
+
+.poke-img {
+    width: 180px;
+    border-radius: 50%;
+}
+
+.poke-stats div {
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    padding: 5px;
+    font-size: 18px;
+}
+
+.poke-types div {
+    padding: 5px;
+    margin: 5px;
+    border-radius: 4px;
+    border: 1px dashed black;
+}
+
