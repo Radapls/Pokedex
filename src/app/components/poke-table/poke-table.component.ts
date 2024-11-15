@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, EventEmitter, Output } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { BusquedaPokemon } from 'src/app/services/pokedex.services';
+import { PokedexService } from 'src/app/services/pokedex.services';
 
 @Component({
   selector: 'app-poke-table',
@@ -11,44 +11,30 @@ import { BusquedaPokemon } from 'src/app/services/pokedex.services';
 export class PokeTableComponent implements OnInit {
 
   @Output()
-  public pokemonName   = new EventEmitter<string>();
+  public pokemonName = new EventEmitter<string>();
 
   public displayedColumns: string[] = ['name'];
-  public data: any[] = [];
-  public dataSource = new MatTableDataSource<any>(this.data);
-  public pokedata = [];
+  public dataSource = new MatTableDataSource<any>();
 
   @ViewChild(MatPaginator, { static: true })
   paginator!: MatPaginator;
-  
-  constructor(private busquedapokemon: BusquedaPokemon) { }
-  
+
+  constructor(private pokeService: PokedexService) {}
+
   ngOnInit(): void {
-    this.getPokemons();
+    this.pokeService.getAllPokemon('151').subscribe(
+      res => {
+        // Update the dataSource with fetched data
+        this.dataSource.data = res.results;
+        // Assign the paginator
+        this.dataSource.paginator = this.paginator;
+      },
+      err => console.error('Failed to fetch Pokémon data', err)
+    );
   }
 
- public getPokemons(){
-
-  
-   let pokedata;
-
-    for(let i = 1; i <= 150; i++){
-      this.busquedapokemon.getPokemons(i).subscribe(
-        res => {
-          pokedata = {
-            name: res.name
-          };
-          this.data.push(pokedata);
-          this.dataSource = new MatTableDataSource<any>(this.data);
-          this.dataSource.paginator = this.paginator; 
-          console.log(res)
-
-        }
-      );
-    }
-  }
-
-  getRow(row: any){
-    this.pokemonName.emit(row.name)
+  getRow(row: any) {
+    // Emit the selected Pokémon name
+    this.pokemonName.emit(row.name);
   }
 }

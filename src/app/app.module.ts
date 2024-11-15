@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { BusquedaPokemon, PokedexService } from './services/pokedex.services';
+import { PokedexService } from './services/pokedex.services';
 import { FormsModule } from '@angular/forms';
 import { MatCardModule} from '@angular/material/card';
 import { MatTableModule} from '@angular/material/table';
@@ -28,8 +28,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule
   ],
   providers: [
-    PokedexService,
-    BusquedaPokemon
+    PokedexService
 
   ],
   bootstrap: [AppComponent]

@@ -1,22 +1,13 @@
- 
+
  <!DOCTYPE html>
 
  <html lang="en">
-     <head>
-         <meta charset="utf-8">
-         <meta name="author" content="Juan Felipe Rada">
-         <meta name="description" content="Pokedex interativa">
-         <meta name="keywords" content="pokemon, pokedex, proyecto">
-         <link rel="shortcut icon" href="https://static.wikia.nocookie.net/pokepediabr/images/3/38/Pok%C3%A9dex_Kanto.png/revision/latest?cb=20131224014121&path-prefix=pt-br">
-         <script src="app.component.ts" type="text/javascript" defer></script>
-         <link rel="stylesheet" href="app.component.css">
-    </head>
+
 
   <!--------------------------------------------->
 
-     <body>
         <app-header></app-header>
-          <div class="Container">            
+          <div class="Container">
             <div class="profundo">
               <input Input [(ngModel)]="search" type="text" name="pokemon" autocomplete="off" (keyup.enter)="SearchPokemon()">
               <main>
@@ -28,19 +19,18 @@
                   <div dataPokeCard class="poke-card" *ngIf="pokemon">
                     <div datPokeName class="poke-name" >{{ pokemon?.name }}</div>
                     <div dataPokeImgContainer class="img-container"> </div>
-                    <img dataPokeImg class="poke-img" [src]="pokemon?.sprites.front_default">
+                    <img dataPokeImg class="poke-img" [src]="pokemon?.sprites?.other?.['official-artwork']?.front_default">
                       <p> <b>Número</b></p>
                     <div dataPokeId >{{ pokemon?.id }}</div>
                       <p> <b>Tipo</b></p>
-                    <div dataPokeTypes class="poke-types">{{ pokemon?.types[0].type.name }}</div>
+                    <div dataPokeTypes class="poke-types">{{ pokemon?.types[0].type.name | titlecase }}</div>
                       <p> <b>Moves</b></p>
-                    <div  dataPokeMoves class="poke-moves" *ngFor="let move of pokemon?.moves.slice(0,2)">
-                      {{ move.move.name }}
+                    <div  dataPokeMoves class="poke-moves" *ngFor="let ability of pokemon?.abilities">
+                      {{ ability.ability.name }}
                     </div>
                   </div>
               </main>
-            </div>  
+            </div>
           </div>
-      </body>
-      
+
 </html>

@@ -1,4 +1,5 @@
 
+
 ol, ul{
     text-align: left;
     padding-left: 0;
@@ -7,8 +8,8 @@ ol, ul{
 
 main{
     display: flex;
-    flex-direction: row; 
-    justify-content: space-around;  
+    flex-direction: row;
+    justify-content: space-around;
     margin-top: 20px;
 }
 
@@ -32,7 +33,6 @@ input{
     position: relative;
     height: fit-content;
     font-family: 'Roboto Mono', monospace;
-    max-width: 800px;
     border-radius: 4px;
     color: #000;
     text-align: center;
@@ -59,7 +59,6 @@ input{
         width: 400px;
         position: relative;
         font-family: 'Roboto Mono', monospace;
-        max-width: 300px;
         border-radius: 4px;
         color: #000;
         text-align: center;
@@ -77,12 +76,12 @@ input{
 }
             input[name="pokemon"] {
                 width: 250px;
-                border-style: solid;   
+                border-style: solid;
                 border-width: 3px;
                 border-color: #591c92;
             }
 
-            
+
 .poke-card {
     width: 400px;
     position: relative;
@@ -103,8 +102,7 @@ input{
 }
 
 .poke-img {
-    width: 180px;
-    border-radius: 50%;
+width: 180px;
 }
 
 .poke-stats div {
@@ -121,4 +119,3 @@ input{
     border-radius: 4px;
     border: 1px dashed black;
 }
-
