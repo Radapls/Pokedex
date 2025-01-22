@@ -1,23 +1,33 @@
-.contenedor{
-    width: 100%;
-    margin-top: 20px;
-    margin: auto;
+.contenedor {
+  margin-top: 20px;
+  margin: auto;
+
 }
 
-.nombre{
-    min-width: 100%;
-    margin: auto;
-    text-align: center;
+.nombre {
+  min-width: 100%;
+  margin: auto;
+  text-align: center;
 }
 
-th{
-    text-align: center !important;
-    background-color: #591c92 ;
-    color: #fff;
+.mat-header-cell {
+  text-align: center;
+  background-color: #591c92;
+  color: #fff;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
 }
 
-.mat-cell:hover{
-    cursor:pointer;
-    box-shadow: inset 0 0 0 5px #591c92;
-    transition: box-shadow 100ms ease-in-out;
+.mat-cell {
+  transition: 0.2s;
+}
+
+.mat-cell:hover {
+  cursor: pointer;
+  background-color: #c5b5d4;
+  transition: 0.2s;
+}
+
+.mat-paginator {
+  padding: 20px 10px;
 }
