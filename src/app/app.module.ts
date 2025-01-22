@@ -11,12 +11,14 @@ import { HeaderComponent } from './components/header/header.component';
 import { PokeTableComponent } from './components/poke-table/poke-table.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PokeCardComponent } from './components/poke-card/poke-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     PokeTableComponent,
+    PokeCardComponent
   ],
   imports: [
     BrowserModule,

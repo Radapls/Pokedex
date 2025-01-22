@@ -1,9 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 html {
-    overflow: hidden;
-
+  overflow-x: hidden;
+  font-family: "Roboto Mono", monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body, h1 {
+  margin: 0;
 }
 
 .mat-icon-button {
-background-color: transparent !important;
+  background-color: transparent;
 }

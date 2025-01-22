@@ -1,0 +1,27 @@
+<div dataPokeCard class="poke-card" *ngIf="pokemon">
+  <div datPokeName class="poke-name">{{ pokemon?.name | titlecase }}</div>
+  <img
+    dataPokeImg
+    loading="lazy"
+    class="poke-img"
+    [src]="pokemon?.sprites?.other?.['official-artwork']?.front_default"
+  />
+  <p>Number</p>
+  <div dataPokeId>{{ pokemon?.id }}</div>
+
+  <p>Type</p>
+  <div dataPokeTypes class="poke-types">
+    {{ pokemon?.types[0].type.name | titlecase }}
+  </div>
+  <p>Moves</p>
+  <ul class="poke-moves">
+    <li *ngFor="let ability of pokemon?.abilities">
+      {{ ability.ability.name | titlecase }}
+    </li>
+  </ul>
+  <audio
+    [src]="pokemon?.cries.legacy || pokemon?.cries.latest"
+    controls
+    autoplay
+  ></audio>
+</div>

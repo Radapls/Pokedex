@@ -1,36 +1,27 @@
+<!DOCTYPE html>
 
- <!DOCTYPE html>
-
- <html lang="en">
-
-
+<html lang="en">
   <!--------------------------------------------->
 
-        <app-header></app-header>
-          <div class="Container">
-            <div class="profundo">
-              <input Input [(ngModel)]="search" type="text" name="pokemon" autocomplete="off" (keyup.enter)="SearchPokemon()">
-              <main>
-                    <div class="poke-list">
-                      <app-poke-table (pokemonName)="CallPokemon($event)"></app-poke-table>
-                      <li *ngFor="let name of "></li>
-                    </div>
+  <app-header></app-header>
+  <div class="container">
+    <input
+      Input
+      [(ngModel)]="search"
+      type="text"
+      name="pokemon"
+      autocomplete="off"
+      (keyup.enter)="SearchPokemon()"
+    />
+    <main>
+      <div class="poke-list">
+        <app-poke-table (pokemonName)="CallPokemon($event)"></app-poke-table>
+        <li *ngFor="let name; of"></li>
+      </div>
 
-                  <div dataPokeCard class="poke-card" *ngIf="pokemon">
-                    <div datPokeName class="poke-name" >{{ pokemon?.name }}</div>
-                    <div dataPokeImgContainer class="img-container"> </div>
-                    <img dataPokeImg class="poke-img" [src]="pokemon?.sprites?.other?.['official-artwork']?.front_default">
-                      <p> <b>Número</b></p>
-                    <div dataPokeId >{{ pokemon?.id }}</div>
-                      <p> <b>Tipo</b></p>
-                    <div dataPokeTypes class="poke-types">{{ pokemon?.types[0].type.name | titlecase }}</div>
-                      <p> <b>Moves</b></p>
-                    <div  dataPokeMoves class="poke-moves" *ngFor="let ability of pokemon?.abilities">
-                      {{ ability.ability.name }}
-                    </div>
-                  </div>
-              </main>
-            </div>
-          </div>
+      <app-poke-card [pokemon]="pokemon" *ngIf="pokemon"></app-poke-card>
 
+
+    </main>
+  </div>
 </html>
